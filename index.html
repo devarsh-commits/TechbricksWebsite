@@ -4,16 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechBricks – Leading IT Training &amp; Services in Kharghar</title>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-  <!-- External Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════
-       TOP BAR
-  ═══════════════════════════════════════ -->
   <div class="topbar">
     <div class="topbar-inner">
       <span>🎓 Leading IT Training &amp; Services in Kharghar, Navi Mumbai</span>
@@ -25,15 +20,11 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════
-       NAVBAR
-  ═══════════════════════════════════════ -->
   <nav>
     <div class="nav-inner">
       <a href="#" class="logo">Tech<span>Bricks</span></a>
       <ul class="nav-links">
         <li><a href="#about">About Us</a></li>
-
         <li class="dropdown">
           <a href="#courses">Our Courses ▾</a>
           <div class="dropdown-menu">
@@ -49,7 +40,6 @@
             <a href="#">Digital Marketing</a>
           </div>
         </li>
-
         <li class="dropdown">
           <a href="#services">Our Services ▾</a>
           <div class="dropdown-menu">
@@ -58,28 +48,67 @@
             <a href="#">Digital Marketing</a>
           </div>
         </li>
-
         <li><a href="#placements">Placements</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="btn-enquire" onclick="openModal()">Enquire Now</button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </nav>
 
-  <!-- ═══════════════════════════════════════
-       HERO
-  ═══════════════════════════════════════ -->
+  <!-- MOBILE NAV DRAWER -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-links">
+      <li><a href="#about">About Us</a></li>
+      <li>
+        <a href="#courses" class="mob-submenu-toggle" data-target="mob-courses">
+          Our Courses <span class="mob-arrow">›</span>
+        </a>
+        <div class="mobile-submenu" id="mob-courses">
+          <a href="#">IT Fundamental Course</a>
+          <a href="#">Diploma in Graphic Designing</a>
+          <a href="#">Diploma in Web Designing</a>
+          <a href="#">Diploma in Web Technology</a>
+          <a href="#">Diploma in Software Programming</a>
+          <a href="#">Business Accounting &amp; Taxation</a>
+          <a href="#">Diploma in Auto CAD</a>
+          <a href="#">Hardware &amp; Networking</a>
+          <a href="#">Digital Marketing</a>
+        </div>
+      </li>
+      <li>
+        <a href="#services" class="mob-submenu-toggle" data-target="mob-services">
+          Our Services <span class="mob-arrow">›</span>
+        </a>
+        <div class="mobile-submenu" id="mob-services">
+          <a href="#">Website Designing</a>
+          <a href="#">Digital Marketing</a>
+        </div>
+      </li>
+      <li><a href="#placements">Placements</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <p class="mobile-nav-footer-label">📞 Call Us Directly</p>
+      <a href="tel:9892446942" class="mobile-call-link">📞 9892446942</a>
+      <a href="tel:9323222335" class="mobile-call-link">📞 9323222335</a>
+      <button class="mobile-enquire-btn" onclick="openModal(); closeMobileNav();">🎓 Enquire Now</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
     <div class="hero-inner">
-
-      <!-- Left Content -->
       <div class="hero-left">
-        <div class="hero-badge">
-          <span></span> Established 2018 · Kharghar, Navi Mumbai
-        </div>
+        <div class="hero-badge"><span></span> Established 2018 · Kharghar, Navi Mumbai</div>
         <h1>We Build <em>IT Careers</em><br>from the Ground Up</h1>
         <p>Comprehensive IT courses and cutting-edge training for students, working professionals, and corporates — at Indian prices with international quality.</p>
         <div class="hero-cta">
@@ -87,31 +116,20 @@
           <a href="tel:9892446942" class="btn-outline">📞 Call Us Now</a>
         </div>
       </div>
-
-      <!-- Right Stats Card -->
       <div class="hero-card">
         <div class="hero-card-title">TechBricks at a Glance</div>
         <div class="stat-row">
           <div class="stat-item">
             <div class="stat-icon">👨‍🎓</div>
-            <div>
-              <div class="stat-num">1500+</div>
-              <div class="stat-label">Students Enrolled</div>
-            </div>
+            <div><div class="stat-num">1500+</div><div class="stat-label">Students Enrolled</div></div>
           </div>
           <div class="stat-item">
             <div class="stat-icon">📚</div>
-            <div>
-              <div class="stat-num">50+</div>
-              <div class="stat-label">Courses Available</div>
-            </div>
+            <div><div class="stat-num">50+</div><div class="stat-label">Courses Available</div></div>
           </div>
           <div class="stat-item">
             <div class="stat-icon">💼</div>
-            <div>
-              <div class="stat-num">800+</div>
-              <div class="stat-label">Students Placed</div>
-            </div>
+            <div><div class="stat-num">800+</div><div class="stat-label">Students Placed</div></div>
           </div>
         </div>
         <div class="call-strip">
@@ -122,17 +140,13 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
-       ABOUT
-  ═══════════════════════════════════════ -->
+  <!-- ABOUT -->
   <section class="about" id="about">
     <div class="container">
       <div class="about-grid">
-
         <div class="about-visual reveal">
           <div class="about-year">Est. 2018</div>
           <div class="about-visual-inner">
@@ -140,51 +154,23 @@
             <p>Years of Excellence in<br>IT Education &amp; Services</p>
           </div>
         </div>
-
         <div class="about-content reveal">
           <div class="section-label">About TechBricks</div>
           <h2 class="section-title">Connecting Roots to<br>Reach the Sky</h2>
           <p>Founded in 2018 in Navi Mumbai, TechBricks Institute believes in growing students from roots to become towering professionals. All our courses start from the very basics and transform students into industry-ready experts.</p>
           <p>We offer comprehensive IT courses and cutting-edge training programs to IT aspirants, working professionals, corporates, institutions and government entities — delivering International Quality education at Indian Prices.</p>
           <div class="about-features">
-            <div class="about-feature">
-              <div class="feature-icon">🧠</div>
-              <div class="feature-text">
-                <strong>Smart Learning</strong>
-                <span>LMS provided for all students</span>
-              </div>
-            </div>
-            <div class="about-feature">
-              <div class="feature-icon">🏭</div>
-              <div class="feature-text">
-                <strong>Industry Demand</strong>
-                <span>Learn job-ready skills</span>
-              </div>
-            </div>
-            <div class="about-feature">
-              <div class="feature-icon">🎓</div>
-              <div class="feature-text">
-                <strong>Certification</strong>
-                <span>Professional certificates</span>
-              </div>
-            </div>
-            <div class="about-feature">
-              <div class="feature-icon">💼</div>
-              <div class="feature-text">
-                <strong>Placement Support</strong>
-                <span>Quality job assistance</span>
-              </div>
-            </div>
+            <div class="about-feature"><div class="feature-icon">🧠</div><div class="feature-text"><strong>Smart Learning</strong><span>LMS provided for all students</span></div></div>
+            <div class="about-feature"><div class="feature-icon">🏭</div><div class="feature-text"><strong>Industry Demand</strong><span>Learn job-ready skills</span></div></div>
+            <div class="about-feature"><div class="feature-icon">🎓</div><div class="feature-text"><strong>Certification</strong><span>Professional certificates</span></div></div>
+            <div class="about-feature"><div class="feature-icon">💼</div><div class="feature-text"><strong>Placement Support</strong><span>Quality job assistance</span></div></div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
-       COURSES
-  ═══════════════════════════════════════ -->
+  <!-- COURSES -->
   <section class="courses" id="courses">
     <div class="container">
       <div class="title-block reveal">
@@ -193,95 +179,20 @@
         <p class="section-sub">Choose from our wide range of industry-aligned diploma and professional courses designed for all levels.</p>
       </div>
       <div class="courses-grid">
-
-        <div class="course-card reveal">
-          <div class="course-card-top" style="background: linear-gradient(135deg,#1a1a2e,#16213e);">💻</div>
-          <div class="course-card-body">
-            <h4>IT Fundamental Course</h4>
-            <p>A complete course for absolute beginners. Start your computer journey with essential IT skills and tools.</p>
-            <span class="course-tag">Beginner Friendly</span>
-          </div>
-        </div>
-
-        <div class="course-card reveal">
-          <div class="course-card-top" style="background: linear-gradient(135deg,#4a0080,#9b59b6);">🎨</div>
-          <div class="course-card-body">
-            <h4>Diploma in Graphic Designing</h4>
-            <p>Foundation course covering Photoshop, Illustrator and more. Become a professional graphic designer.</p>
-            <span class="course-tag">Creative Arts</span>
-          </div>
-        </div>
-
-        <div class="course-card reveal">
-          <div class="course-card-top" style="background: linear-gradient(135deg,#0d4f8b,#2980b9);">🌐</div>
-          <div class="course-card-body">
-            <h4>Diploma in Web Designing</h4>
-            <p>Become a web designer by learning HTML5, CSS3, responsive design and modern layout techniques.</p>
-            <span class="course-tag">Web &amp; UI</span>
-          </div>
-        </div>
-
-        <div class="course-card reveal">
-          <div class="course-card-top" style="background: linear-gradient(135deg,#004d2c,#27ae60);">⚙️</div>
-          <div class="course-card-body">
-            <h4>Diploma in Web Technology</h4>
-            <p>100% comprehensive web development course — from front-end basics to full-stack development.</p>
-            <span class="course-tag">Full Stack</span>
-          </div>
-        </div>
-
-        <div class="course-card reveal">
-          <div class="course-card-top" style="background: linear-gradient(135deg,#7a1a00,#e63312);">🖥️</div>
-          <div class="course-card-body">
-            <h4>Diploma in Software Programming</h4>
-            <p>Specially designed for people with no prior knowledge. Master software programming from scratch.</p>
-            <span class="course-tag">Programming</span>
-          </div>
-        </div>
-
-        <div class="course-card reveal">
-          <div class="course-card-top" style="background: linear-gradient(135deg,#5a4000,#f39c12);">📊</div>
-          <div class="course-card-body">
-            <h4>Diploma in Business Accounting &amp; Taxation</h4>
-            <p>Experiential and practical BAT course — Tally, GST, income tax and more for finance professionals.</p>
-            <span class="course-tag">Finance &amp; Tax</span>
-          </div>
-        </div>
-
-        <div class="course-card reveal">
-          <div class="course-card-top" style="background: linear-gradient(135deg,#003333,#1abc9c);">📐</div>
-          <div class="course-card-body">
-            <h4>Diploma in Auto CAD</h4>
-            <p>CAD software for architects, engineers, and designers. Master 2D &amp; 3D design using AutoCAD.</p>
-            <span class="course-tag">Engineering</span>
-          </div>
-        </div>
-
-        <div class="course-card reveal">
-          <div class="course-card-top" style="background: linear-gradient(135deg,#1a003a,#8e44ad);">🔧</div>
-          <div class="course-card-body">
-            <h4>Diploma in Hardware &amp; Networking</h4>
-            <p>Learn about physical components, network setup, troubleshooting and hardware management.</p>
-            <span class="course-tag">Hardware</span>
-          </div>
-        </div>
-
-        <div class="course-card reveal">
-          <div class="course-card-top" style="background: linear-gradient(135deg,#1a2a00,#82b73c);">📱</div>
-          <div class="course-card-body">
-            <h4>Digital Marketing</h4>
-            <p>Master SEO, Social Media Marketing, Google Ads, content marketing and analytics strategies.</p>
-            <span class="course-tag">Marketing</span>
-          </div>
-        </div>
-
+        <div class="course-card reveal"><div class="course-card-top" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">💻</div><div class="course-card-body"><h4>IT Fundamental Course</h4><p>A complete course for absolute beginners. Start your computer journey with essential IT skills and tools.</p><span class="course-tag">Beginner Friendly</span></div></div>
+        <div class="course-card reveal"><div class="course-card-top" style="background:linear-gradient(135deg,#4a0080,#9b59b6)">🎨</div><div class="course-card-body"><h4>Diploma in Graphic Designing</h4><p>Foundation course covering Photoshop, Illustrator and more. Become a professional graphic designer.</p><span class="course-tag">Creative Arts</span></div></div>
+        <div class="course-card reveal"><div class="course-card-top" style="background:linear-gradient(135deg,#0d4f8b,#2980b9)">🌐</div><div class="course-card-body"><h4>Diploma in Web Designing</h4><p>Become a web designer by learning HTML5, CSS3, responsive design and modern layout techniques.</p><span class="course-tag">Web &amp; UI</span></div></div>
+        <div class="course-card reveal"><div class="course-card-top" style="background:linear-gradient(135deg,#004d2c,#27ae60)">⚙️</div><div class="course-card-body"><h4>Diploma in Web Technology</h4><p>100% comprehensive web development course — from front-end basics to full-stack development.</p><span class="course-tag">Full Stack</span></div></div>
+        <div class="course-card reveal"><div class="course-card-top" style="background:linear-gradient(135deg,#7a1a00,#e63312)">🖥️</div><div class="course-card-body"><h4>Diploma in Software Programming</h4><p>Specially designed for people with no prior knowledge. Master software programming from scratch.</p><span class="course-tag">Programming</span></div></div>
+        <div class="course-card reveal"><div class="course-card-top" style="background:linear-gradient(135deg,#5a4000,#f39c12)">📊</div><div class="course-card-body"><h4>Diploma in Business Accounting &amp; Taxation</h4><p>Experiential and practical BAT course — Tally, GST, income tax and more for finance professionals.</p><span class="course-tag">Finance &amp; Tax</span></div></div>
+        <div class="course-card reveal"><div class="course-card-top" style="background:linear-gradient(135deg,#003333,#1abc9c)">📐</div><div class="course-card-body"><h4>Diploma in Auto CAD</h4><p>CAD software for architects, engineers, and designers. Master 2D &amp; 3D design using AutoCAD.</p><span class="course-tag">Engineering</span></div></div>
+        <div class="course-card reveal"><div class="course-card-top" style="background:linear-gradient(135deg,#1a003a,#8e44ad)">🔧</div><div class="course-card-body"><h4>Diploma in Hardware &amp; Networking</h4><p>Learn about physical components, network setup, troubleshooting and hardware management.</p><span class="course-tag">Hardware</span></div></div>
+        <div class="course-card reveal"><div class="course-card-top" style="background:linear-gradient(135deg,#1a2a00,#82b73c)">📱</div><div class="course-card-body"><h4>Digital Marketing</h4><p>Master SEO, Social Media Marketing, Google Ads, content marketing and analytics strategies.</p><span class="course-tag">Marketing</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
-       WHY CHOOSE US
-  ═══════════════════════════════════════ -->
+  <!-- WHY CHOOSE US -->
   <section class="why" id="placements">
     <div class="container">
       <div class="title-block reveal">
@@ -290,50 +201,17 @@
         <p class="section-sub">We are committed to your growth with industry-relevant skills, expert mentorship and strong placement support.</p>
       </div>
       <div class="why-grid">
-
-        <div class="why-card reveal">
-          <div class="why-icon">🧠</div>
-          <h4>Smart Learning Methodology</h4>
-          <p>Learning Management Tool provided for all TechBricks students as part of their course for a seamless experience.</p>
-        </div>
-
-        <div class="why-card reveal">
-          <div class="why-icon">🏭</div>
-          <h4>Industry Demand Technology</h4>
-          <p>Learn IT industry-required skills to become a job-ready professional that companies are actively hiring.</p>
-        </div>
-
-        <div class="why-card reveal">
-          <div class="why-icon">🏆</div>
-          <h4>Professional Certification</h4>
-          <p>Become an IT Professional with our courses and master the skills required for today's competitive industry.</p>
-        </div>
-
-        <div class="why-card reveal">
-          <div class="why-icon">🕐</div>
-          <h4>Flexible Batch Timings</h4>
-          <p>Batch timings are flexible and convenient for young students, graduates and working professionals alike.</p>
-        </div>
-
-        <div class="why-card reveal">
-          <div class="why-icon">🤝</div>
-          <h4>Personal Counseling</h4>
-          <p>Every case is unique. We offer personal counselling and custom-designed courses to match your goals.</p>
-        </div>
-
-        <div class="why-card reveal">
-          <div class="why-icon">💼</div>
-          <h4>Placement Support</h4>
-          <p>Quality job placement assistance for local and national opportunities to kickstart your IT career.</p>
-        </div>
-
+        <div class="why-card reveal"><div class="why-icon">🧠</div><h4>Smart Learning Methodology</h4><p>Learning Management Tool provided for all TechBricks students as part of their course for a seamless experience.</p></div>
+        <div class="why-card reveal"><div class="why-icon">🏭</div><h4>Industry Demand Technology</h4><p>Learn IT industry-required skills to become a job-ready professional that companies are actively hiring.</p></div>
+        <div class="why-card reveal"><div class="why-icon">🏆</div><h4>Professional Certification</h4><p>Become an IT Professional with our courses and master the skills required for today's competitive industry.</p></div>
+        <div class="why-card reveal"><div class="why-icon">🕐</div><h4>Flexible Batch Timings</h4><p>Batch timings are flexible and convenient for young students, graduates and working professionals alike.</p></div>
+        <div class="why-card reveal"><div class="why-icon">🤝</div><h4>Personal Counseling</h4><p>Every case is unique. We offer personal counselling and custom-designed courses to match your goals.</p></div>
+        <div class="why-card reveal"><div class="why-icon">💼</div><h4>Placement Support</h4><p>Quality job placement assistance for local and national opportunities to kickstart your IT career.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
-       SERVICES
-  ═══════════════════════════════════════ -->
+  <!-- SERVICES -->
   <section class="services" id="services">
     <div class="container">
       <div class="title-block reveal">
@@ -341,56 +219,25 @@
         <h2 class="section-title">Grow Your Business<br>Digitally with TechBricks</h2>
       </div>
       <div class="services-grid">
-
-        <div class="service-card reveal">
-          <div class="service-ico">🌐</div>
-          <div>
-            <h4>Website Designing</h4>
-            <p>We create stunning, responsive, and SEO-friendly websites that help your business stand out online. From landing pages to full e-commerce platforms, we do it all.</p>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-ico">📈</div>
-          <div>
-            <h4>Digital Marketing</h4>
-            <p>Grow your brand with data-driven digital marketing strategies — SEO, Google Ads, Social Media, and email marketing tailored for your business goals.</p>
-          </div>
-        </div>
-
+        <div class="service-card reveal"><div class="service-ico">🌐</div><div><h4>Website Designing</h4><p>We create stunning, responsive, and SEO-friendly websites that help your business stand out online. From landing pages to full e-commerce platforms, we do it all.</p></div></div>
+        <div class="service-card reveal"><div class="service-ico">📈</div><div><h4>Digital Marketing</h4><p>Grow your brand with data-driven digital marketing strategies — SEO, Google Ads, Social Media, and email marketing tailored for your business goals.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
-       STATS BANNER
-  ═══════════════════════════════════════ -->
+  <!-- STATS -->
   <div class="stats-banner">
     <div class="container">
       <div class="stats-row">
-        <div class="stat-big reveal">
-          <div class="stat-big-num">1500+</div>
-          <div class="stat-big-label">Students Enrolled</div>
-        </div>
-        <div class="stat-big reveal">
-          <div class="stat-big-num">50+</div>
-          <div class="stat-big-label">Courses to Offer</div>
-        </div>
-        <div class="stat-big reveal">
-          <div class="stat-big-num">800+</div>
-          <div class="stat-big-label">Successful Students Placed</div>
-        </div>
-        <div class="stat-big reveal">
-          <div class="stat-big-num">7+</div>
-          <div class="stat-big-label">Years of Excellence</div>
-        </div>
+        <div class="stat-big reveal"><div class="stat-big-num">1500+</div><div class="stat-big-label">Students Enrolled</div></div>
+        <div class="stat-big reveal"><div class="stat-big-num">50+</div><div class="stat-big-label">Courses to Offer</div></div>
+        <div class="stat-big reveal"><div class="stat-big-num">800+</div><div class="stat-big-label">Successful Students Placed</div></div>
+        <div class="stat-big reveal"><div class="stat-big-num">7+</div><div class="stat-big-label">Years of Excellence</div></div>
       </div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════
-       TESTIMONIALS
-  ═══════════════════════════════════════ -->
+  <!-- TESTIMONIALS -->
   <section class="testimonials" id="testimonials">
     <div class="container">
       <div class="title-block reveal">
@@ -398,86 +245,17 @@
         <h2 class="section-title">What Our Students<br>Say About Us</h2>
       </div>
       <div class="testimonials-grid">
-
-        <div class="testi-card reveal">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">Very good &amp; experienced teaching staff. Good teaching style and gives explanations with examples. Learned a lot of things during the course period. Thank you TechBricks!</p>
-          <div class="testi-author">
-            <div class="testi-avatar">U</div>
-            <div>
-              <div class="testi-name">Ujwala Pawar</div>
-              <div class="testi-stars">★★★★★</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">I completed my web and graphic designing course here. Amazing experience and amazing explanation from Rupesh sir. I got a second family here at TechBricks!</p>
-          <div class="testi-author">
-            <div class="testi-avatar">D</div>
-            <div>
-              <div class="testi-name">Divyani Sangu</div>
-              <div class="testi-stars">★★★★★</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">It was a very nice experience. I learned lots of things here. Teaching and supporting staff are very kind. Nikhil sir guided me about software with great patience.</p>
-          <div class="testi-author">
-            <div class="testi-avatar">N</div>
-            <div>
-              <div class="testi-name">Nikita Lole</div>
-              <div class="testi-stars">★★★★★</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">Had a very nice experience learning computer language. One of the best institutes for Python learning. Highly recommended for anyone looking to start coding.</p>
-          <div class="testi-author">
-            <div class="testi-avatar">R</div>
-            <div>
-              <div class="testi-name">Raj Shinde</div>
-              <div class="testi-stars">★★★★★</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">The teaching staff is very nice and supportive. Nikhil Katwate sir is very friendly and professional. He helped me understand software from the very basics.</p>
-          <div class="testi-author">
-            <div class="testi-avatar">A</div>
-            <div>
-              <div class="testi-name">Archana Gharge</div>
-              <div class="testi-stars">★★★★★</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">Completed Tally &amp; MS Office here. It was a great experience! Both faculty — Rupesh sir and Nikhil sir — were very helpful. Completed my course in a short time.</p>
-          <div class="testi-author">
-            <div class="testi-avatar">G</div>
-            <div>
-              <div class="testi-name">Gayatri Pawar</div>
-              <div class="testi-stars">★★★★★</div>
-            </div>
-          </div>
-        </div>
-
+        <div class="testi-card reveal"><div class="testi-quote">"</div><p class="testi-text">Very good &amp; experienced teaching staff. Good teaching style and gives explanations with examples. Learned a lot of things during the course period. Thank you TechBricks!</p><div class="testi-author"><div class="testi-avatar">U</div><div><div class="testi-name">Ujwala Pawar</div><div class="testi-stars">★★★★★</div></div></div></div>
+        <div class="testi-card reveal"><div class="testi-quote">"</div><p class="testi-text">I completed my web and graphic designing course here. Amazing experience and amazing explanation from Rupesh sir. I got a second family here at TechBricks!</p><div class="testi-author"><div class="testi-avatar">D</div><div><div class="testi-name">Divyani Sangu</div><div class="testi-stars">★★★★★</div></div></div></div>
+        <div class="testi-card reveal"><div class="testi-quote">"</div><p class="testi-text">It was a very nice experience. I learned lots of things here. Teaching and supporting staff are very kind. Nikhil sir guided me about software with great patience.</p><div class="testi-author"><div class="testi-avatar">N</div><div><div class="testi-name">Nikita Lole</div><div class="testi-stars">★★★★★</div></div></div></div>
+        <div class="testi-card reveal"><div class="testi-quote">"</div><p class="testi-text">Had a very nice experience learning computer language. One of the best institutes for Python learning. Highly recommended for anyone looking to start coding.</p><div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Raj Shinde</div><div class="testi-stars">★★★★★</div></div></div></div>
+        <div class="testi-card reveal"><div class="testi-quote">"</div><p class="testi-text">The teaching staff is very nice and supportive. Nikhil Katwate sir is very friendly and professional. He helped me understand software from the very basics.</p><div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Archana Gharge</div><div class="testi-stars">★★★★★</div></div></div></div>
+        <div class="testi-card reveal"><div class="testi-quote">"</div><p class="testi-text">Completed Tally &amp; MS Office here. It was a great experience! Both faculty — Rupesh sir and Nikhil sir — were very helpful. Completed my course in a short time.</p><div class="testi-author"><div class="testi-avatar">G</div><div><div class="testi-name">Gayatri Pawar</div><div class="testi-stars">★★★★★</div></div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
-       CTA BANNER
-  ═══════════════════════════════════════ -->
+  <!-- CTA -->
   <div class="cta-banner" id="contact">
     <div class="container">
       <h2>Learn a New Skill From Us!</h2>
@@ -490,14 +268,11 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-top">
       <div class="container">
         <div class="footer-grid">
-
           <div class="footer-brand">
             <a href="#" class="logo">Tech<span>Bricks</span></a>
             <p>Leading IT Training Institute in Kharghar, Navi Mumbai. Delivering world-class IT education at Indian prices since 2018.</p>
@@ -506,7 +281,6 @@
               <button type="button">→</button>
             </div>
           </div>
-
           <div class="footer-col">
             <h5>Quick Links</h5>
             <ul>
@@ -517,7 +291,6 @@
               <li><a href="#contact">Contact Us</a></li>
             </ul>
           </div>
-
           <div class="footer-col">
             <h5>Our Courses</h5>
             <ul>
@@ -531,30 +304,13 @@
               <li><a href="#">Digital Marketing</a></li>
             </ul>
           </div>
-
           <div class="footer-col">
             <h5>Get In Touch</h5>
-            <div class="contact-item">
-              <span class="ci-icon">📍</span>
-              <p>Office No. F110, Above Daily Bazaar, Sector 13, Kharghar</p>
-            </div>
-            <div class="contact-item">
-              <span class="ci-icon">📍</span>
-              <p>20, Shelter Riverside, Sector 14, Phase 1 Taloja, Navi Mumbai</p>
-            </div>
-            <div class="contact-item">
-              <span class="ci-icon">📞</span>
-              <div>
-                <a href="tel:9892446942">9892446942</a><br>
-                <a href="tel:9323222335">9323222335</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <span class="ci-icon">✉</span>
-              <a href="mailto:info@techbricks.in">info@techbricks.in</a>
-            </div>
+            <div class="contact-item"><span class="ci-icon">📍</span><p>Office No. F110, Above Daily Bazaar, Sector 13, Kharghar</p></div>
+            <div class="contact-item"><span class="ci-icon">📍</span><p>20, Shelter Riverside, Sector 14, Phase 1 Taloja, Navi Mumbai</p></div>
+            <div class="contact-item"><span class="ci-icon">📞</span><div><a href="tel:9892446942">9892446942</a><br><a href="tel:9323222335">9323222335</a></div></div>
+            <div class="contact-item"><span class="ci-icon">✉</span><a href="mailto:info@techbricks.in">info@techbricks.in</a></div>
           </div>
-
         </div>
       </div>
     </div>
@@ -566,42 +322,22 @@
     </div>
   </footer>
 
-  <!-- ═══════════════════════════════════════
-       FLOATING CALL BUTTON
-  ═══════════════════════════════════════ -->
   <a href="tel:9892446942" class="float-call" title="Call Us Now">📞</a>
 
-  <!-- ═══════════════════════════════════════
-       ENQUIRY MODAL
-  ═══════════════════════════════════════ -->
+  <!-- ENQUIRY MODAL -->
   <div class="modal-overlay" id="enquiryModal" onclick="handleOverlayClick(event)">
     <div class="modal">
       <div class="modal-header">
-        <div>
-          <h3>🎓 Enquire Now</h3>
-          <p>We'll get back to you within 24 hours</p>
-        </div>
+        <div><h3>🎓 Enquire Now</h3><p>We'll get back to you within 24 hours</p></div>
         <button class="modal-close" onclick="closeModal()">✕</button>
       </div>
       <div class="modal-body">
         <div class="form-row">
-          <div class="form-group">
-            <label>First Name *</label>
-            <input type="text" placeholder="Rahul">
-          </div>
-          <div class="form-group">
-            <label>Last Name *</label>
-            <input type="text" placeholder="Sharma">
-          </div>
+          <div class="form-group"><label>First Name *</label><input type="text" placeholder="Rahul"></div>
+          <div class="form-group"><label>Last Name *</label><input type="text" placeholder="Sharma"></div>
         </div>
-        <div class="form-group">
-          <label>Mobile Number *</label>
-          <input type="tel" placeholder="+91 98765 43210">
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="you@example.com">
-        </div>
+        <div class="form-group"><label>Mobile Number *</label><input type="tel" placeholder="+91 98765 43210"></div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@example.com"></div>
         <div class="form-group">
           <label>Course of Interest *</label>
           <select>
@@ -619,20 +355,13 @@
             <option>Digital Marketing Service</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea placeholder="Any specific questions or requirements…"></textarea>
-        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Any specific questions or requirements…"></textarea></div>
         <button class="btn-submit" onclick="submitForm()">Submit Enquiry →</button>
-        <p class="modal-footer-note">
-          📞 Prefer to call? Reach us at <a href="tel:9892446942">9892446942</a>
-        </p>
+        <p class="modal-footer-note">📞 Prefer to call? <a href="tel:9892446942" style="color:var(--primary);font-weight:600;">9892446942</a></p>
       </div>
     </div>
   </div>
 
-  <!-- External JavaScript (loaded at end of body for performance) -->
   <script src="script.js"></script>
-
 </body>
 </html>
