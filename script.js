@@ -1,90 +1,95 @@
-// MODAL
-function openModal() {
-  document.getElementById('enquiryModal').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-function closeModal() {
-  document.getElementById('enquiryModal').classList.remove('active');
-  document.body.style.overflow = '';
-}
-function handleOverlayClick(e) {
-  if (e.target === document.getElementById('enquiryModal')) closeModal();
-}
-function submitForm() {
-  var firstName = document.querySelector('#enquiryModal input[type="text"]').value.trim();
-  var mobile    = document.querySelector('#enquiryModal input[type="tel"]').value.trim();
-  var course    = document.querySelector('#enquiryModal select').value;
-  if (!firstName) { alert('Please enter your first name.'); return; }
-  if (!mobile)    { alert('Please enter your mobile number.'); return; }
-  if (!course)    { alert('Please select a course of interest.'); return; }
-  alert('Thank you, ' + firstName + '! 🎓\nOur team will call you at ' + mobile + ' within 24 hours.');
+// Modal
+function openModal(){document.getElementById('enquiryModal').classList.add('active');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('enquiryModal').classList.remove('active');document.body.style.overflow=''}
+function submitForm(){
+  var fn=document.querySelector('#enquiryModal input[type="text"]').value.trim();
+  var m=document.querySelector('#enquiryModal input[type="tel"]').value.trim();
+  var c=document.querySelector('#enquiryModal select').value;
+  if(!fn){alert('Please enter your first name.');return}
+  if(!m){alert('Please enter your mobile number.');return}
+  if(!c){alert('Please select a course.');return}
+  alert('Thank you, '+fn+'! 🎓\nWe will call you at '+m+' within 24 hours.');
   closeModal();
 }
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
 
-// MOBILE NAV
-function closeMobileNav() {
-  document.getElementById('hamburger').classList.remove('open');
-  document.getElementById('mobileNav').classList.remove('open');
-  document.body.style.overflow = '';
-}
-(function() {
-  var hamburger = document.getElementById('hamburger');
-  var mobileNav = document.getElementById('mobileNav');
-  if (!hamburger || !mobileNav) return;
-  hamburger.addEventListener('click', function() {
-    var isOpen = mobileNav.classList.contains('open');
-    if (isOpen) { closeMobileNav(); }
-    else { hamburger.classList.add('open'); mobileNav.classList.add('open'); document.body.style.overflow = 'hidden'; }
+// Mobile Nav
+function closeMnav(){document.getElementById('hbg').classList.remove('open');document.getElementById('mnav').classList.remove('open');document.body.style.overflow=''}
+(function(){
+  var hbg=document.getElementById('hbg'),mnav=document.getElementById('mnav');
+  if(!hbg||!mnav)return;
+  hbg.addEventListener('click',function(){
+    var o=mnav.classList.contains('open');
+    if(o){closeMnav();}else{hbg.classList.add('open');mnav.classList.add('open');document.body.style.overflow='hidden';}
   });
-  mobileNav.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', function() {
-      var href = link.getAttribute('href');
-      if (href && href.startsWith('#')) closeMobileNav();
-    });
-  });
-  document.querySelectorAll('.mob-submenu-toggle').forEach(function(toggle) {
-    toggle.addEventListener('click', function(e) {
+  mnav.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){var h=l.getAttribute('href');if(h&&h.startsWith('#'))closeMnav();});});
+  document.querySelectorAll('.mst').forEach(function(t){
+    t.addEventListener('click',function(e){
       e.preventDefault();
-      var submenu = document.getElementById(toggle.getAttribute('data-target'));
-      var isOpen  = toggle.classList.contains('open');
-      document.querySelectorAll('.mob-submenu-toggle').forEach(function(t) { t.classList.remove('open'); });
-      document.querySelectorAll('.mobile-submenu').forEach(function(s) { s.classList.remove('open'); });
-      if (!isOpen && submenu) { toggle.classList.add('open'); submenu.classList.add('open'); }
+      var s=document.getElementById(t.getAttribute('data-t'));
+      var o=t.classList.contains('open');
+      document.querySelectorAll('.mst').forEach(function(x){x.classList.remove('open');});
+      document.querySelectorAll('.msub').forEach(function(x){x.classList.remove('open');});
+      if(!o&&s){t.classList.add('open');s.classList.add('open');}
     });
   });
 })();
 
-// SCROLL REVEAL
-(function() {
-  var reveals = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) { reveals.forEach(function(el) { el.classList.add('visible'); }); return; }
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry, i) {
-      if (entry.isIntersecting) { setTimeout(function() { entry.target.classList.add('visible'); }, i * 60); observer.unobserve(entry.target); }
+// Scroll Reveal
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('visible');});return;}
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(en,i){
+      if(en.isIntersecting){setTimeout(function(){en.target.classList.add('visible');},i*70);obs.unobserve(en.target);}
     });
-  }, { threshold: 0.1 });
-  reveals.forEach(function(el) { observer.observe(el); });
+  },{threshold:0.08});
+  els.forEach(function(e){obs.observe(e);});
 })();
 
-// STICKY NAV
-(function() {
-  var nav = document.querySelector('nav');
-  if (!nav) return;
-  window.addEventListener('scroll', function() {
-    nav.style.boxShadow = window.scrollY > 10 ? '0 4px 32px rgba(0,0,0,0.14)' : '0 2px 24px rgba(0,0,0,0.08)';
+// Counter Animation
+function animateCounter(el){
+  var target=parseInt(el.getAttribute('data-target'));
+  var duration=1800;
+  var start=null;
+  function step(ts){
+    if(!start)start=ts;
+    var progress=Math.min((ts-start)/duration,1);
+    var ease=1-Math.pow(1-progress,4);
+    el.textContent=Math.floor(ease*target);
+    if(progress<1)requestAnimationFrame(step);
+    else el.textContent=target;
+  }
+  requestAnimationFrame(step);
+}
+(function(){
+  var counters=document.querySelectorAll('.counter');
+  if(!('IntersectionObserver' in window)){counters.forEach(function(c){c.textContent=c.getAttribute('data-target');});return;}
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){animateCounter(en.target);obs.unobserve(en.target);}
+    });
+  },{threshold:0.3});
+  counters.forEach(function(c){obs.observe(c);});
+})();
+
+// Sticky nav
+(function(){
+  var nav=document.querySelector('nav');
+  window.addEventListener('scroll',function(){
+    nav.style.boxShadow=window.scrollY>10?'0 1px 0 rgba(54,0,93,.15),0 12px 40px rgba(54,0,93,.12)':'0 1px 0 rgba(54,0,93,.1),0 8px 32px rgba(54,0,93,.08)';
   });
 })();
 
-// NEWSLETTER
-(function() {
-  var btn = document.querySelector('.newsletter-form button');
-  if (!btn) return;
-  btn.addEventListener('click', function() {
-    var input = document.querySelector('.newsletter-form input[type="email"]');
-    var email = input ? input.value.trim() : '';
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
-    alert('✅ Subscribed! Thank you — ' + email + ' is now on our list.');
-    if (input) input.value = '';
+// Newsletter
+(function(){
+  var btn=document.querySelector('.nf button');
+  if(!btn)return;
+  btn.addEventListener('click',function(){
+    var inp=document.querySelector('.nf input[type="email"]');
+    var em=inp?inp.value.trim():'';
+    if(!em||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){alert('Please enter a valid email.');return;}
+    alert('✅ Subscribed! Thank you — '+em);
+    if(inp)inp.value='';
   });
 })();
