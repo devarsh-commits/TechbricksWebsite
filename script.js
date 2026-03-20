@@ -49,7 +49,7 @@ function closeMnav(){document.getElementById('hbg').classList.remove('open');doc
 
 // Counter Animation
 function animateCounter(el){
-  var target=parseInt(el.getAttribute('data-target'));
+  var target=parseFloat(el.getAttribute('data-target'));
   var duration=1800;
   var start=null;
   function step(ts){
