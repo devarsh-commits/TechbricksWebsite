@@ -12,7 +12,7 @@ function submitForm(){
   if(!c){alert('Please select a course.');return}
 
   var WA_NUMBER='919892446942'; // <-- WhatsApp number with country code, no + or spaces
-  var text='🎓 *New Course Enquiry*\n\n'
+  var text='🎓 *New Techbricks Enquiry*\n\n'
     +'*Name:* '+fn+'\n'
     +'*Mobile:* '+m+'\n'
     +(em?'*Email:* '+em+'\n':'')
