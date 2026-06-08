@@ -11,7 +11,7 @@ function submitForm() {
   if (!m) { alert('Please enter your mobile number.'); return }
   if (!c) { alert('Please select a course.'); return }
 
-  var WA_NUMBER = '919892446942'; // <-- WhatsApp number with country code, no + or spaces
+  var WA_NUMBER = '918097780966'; // <-- WhatsApp number with country code, no + or spaces
   var text = '🎓 *New Techbricks Enquiry*\n\n'
     + '*Name:* ' + fn + '\n'
     + '*Mobile:* ' + m + '\n'

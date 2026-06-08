@@ -156,10 +156,11 @@ nav {
   font-weight: 500;
   color: var(--text);
   text-decoration: none;
-  padding: 7px 13px;
+  padding: 7px 20px;
   border-radius: 8px;
   transition: all .2s;
-  display: block
+  display: block;
+  /* border: 2px solid red; */
 }
 
 .nl>li>a:hover {
@@ -174,7 +175,7 @@ nav {
 .dmenu {
   display: none;
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 1px);
   left: 0;
   background: var(--white);
   border-radius: var(--r);
@@ -199,7 +200,7 @@ nav {
 }
 
 .dropdown:hover .dmenu {
-  display: block
+  display: block;
 }
 
 .dmenu h5 {
